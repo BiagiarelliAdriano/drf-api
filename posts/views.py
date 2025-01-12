@@ -56,7 +56,7 @@ class PostDetail(APIView):
     def put(self, request, pk):
         post = self.get_object(pk)
         serializer = PostSerializer(
-            post, data=request.data, context={'request', request}
+            post, data=request.data, context={'request': request}
         )
         if serializer.is_valid():
             serializer.save()
