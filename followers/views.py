@@ -11,7 +11,7 @@ class FollowerList(generics.ListCreateAPIView):
     Create a follower, i.e. follow a user if logged in.
     Perform_create: associate the current logged in user with a follower.
     """
-    permission_classes = [pemissions.IsAuthenticatedOrReadOnly]
+    permission_classes = [permissions.IsAuthenticatedOrReadOnly]
     queryset = Follower.objects.all()
     serializer_class = FollowerSerializer
 
